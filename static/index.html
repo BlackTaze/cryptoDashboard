@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crypto Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" title="К выбору монеты">
+      <span class="logo">◆</span><span>Crypto Dashboard</span>
+    </a>
+    <nav id="coin-pills" class="coin-pills" aria-label="Монеты"></nav>
+    <div class="actions">
+      <button data-cmd="refresh" title="Клавиша R">Обновить HTTP</button>
+      <button data-cmd="drop_ws" title="Клавиша X: резко разорвать соединения с биржами">Оборвать WS</button>
+      <button data-cmd="fail_http" title="Клавиша F: следующий запрос каждого HTTP-источника завершится ошибкой">Сбой HTTP</button>
+      <span id="link" class="link" data-state="offline">сервер</span>
+    </div>
+  </header>
+
+  <section id="welcome" class="welcome">
+    <h1>Выберите криптовалюту</h1>
+    <p class="muted">После выбора дашборд начнёт получать данные из независимых источников и будет обновляться, пока вы не закроете страницу или не смените монету.</p>
+    <div id="coin-grid" class="coin-grid"></div>
+    <h2>Источники данных</h2>
+    <div id="source-list" class="source-list"></div>
+  </section>
+
+  <main id="dashboard" class="grid" hidden>
+    <section class="card" id="price">
+      <header class="card-head"><h2 class="card-title">Цена</h2><div class="badges"></div></header>
+      <div class="card-body"></div>
+    </section>
+    <section class="card" id="chart">
+      <header class="card-head"><h2 class="card-title">График, свечи 1 мин</h2><div class="badges"></div></header>
+      <div class="card-body chart-body"></div>
+    </section>
+    <section class="card" id="market">
+      <header class="card-head"><h2 class="card-title">Рынок</h2><div class="badges"></div></header>
+      <div class="card-body"></div>
+    </section>
+    <section class="card" id="book">
+      <header class="card-head"><h2 class="card-title">Стакан</h2><div class="badges"></div></header>
+      <div class="card-body"></div>
+    </section>
+    <section class="card" id="trades">
+      <header class="card-head"><h2 class="card-title">Сделки</h2><div class="badges"></div></header>
+      <div class="card-body"></div>
+    </section>
+    <section class="card" id="info">
+      <header class="card-head"><h2 class="card-title">О монете</h2><div class="badges"></div></header>
+      <div class="card-body"></div>
+    </section>
+    <section class="card" id="news">
+      <header class="card-head"><h2 class="card-title">Новости</h2><div class="badges"></div></header>
+      <div class="card-body"></div>
+    </section>
+    <section class="card" id="sources">
+      <header class="card-head"><h2 class="card-title">Источники данных</h2></header>
+      <div class="card-body"></div>
+    </section>
+    <section class="card" id="log">
+      <header class="card-head"><h2 class="card-title">Журнал событий</h2></header>
+      <div class="card-body"></div>
+    </section>
+  </main>
+</body>
+</html>
